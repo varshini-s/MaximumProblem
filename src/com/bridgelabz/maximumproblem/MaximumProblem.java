@@ -1,8 +1,23 @@
 package com.bridgelabz.maximumproblem;
 
-public class MaximumProblem 
+public class MaximumProblem <E extends Comparable<E>>
 {
+
+	E firstValue, secondValue, thirdValue;
+
+	public MaximumProblem(E firstValue, E secondValue, E thirdValue) 
+	{
+		this.firstValue = firstValue;
+		this.secondValue = secondValue;
+		this.thirdValue = thirdValue;
+	}
+
+	public void testMaximum() 
 	
+	{
+		MaximumProblem.findMaximum(this.firstValue, this.secondValue, this.thirdValue);
+	}
+
 	
 	
 	public static <E extends Comparable<E>> void findMaximum(E firstInput,E secondInput,E thirdInput)
@@ -49,9 +64,10 @@ public class MaximumProblem
 		Float floatNumber1=1f,floatNumber2=7f,floatNumber3=4f;
 		String string1="apple",string2="banana",string3="papaya";
 		
-		findMaximum(integerNumber1, integerNumber2, integerNumber3);
-		findMaximum(floatNumber1, floatNumber2, floatNumber3);
-		findMaximum(string1, string2, string3);
+		new MaximumProblem<Integer>(integerNumber1, integerNumber2, integerNumber3).testMaximum();;
+		new MaximumProblem<Float>(floatNumber1, floatNumber2, floatNumber3).testMaximum();;
+		new MaximumProblem<String>(string1, string2, string3).testMaximum();;
+
 		
 
 	}
